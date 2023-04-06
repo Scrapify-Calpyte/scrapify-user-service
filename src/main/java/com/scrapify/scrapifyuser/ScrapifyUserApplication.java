@@ -10,4 +10,5 @@ public class ScrapifyUserApplication {
 		SpringApplication.run(ScrapifyUserApplication.class, args);
 	}
 
+
 }
