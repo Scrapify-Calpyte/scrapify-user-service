@@ -1,10 +1,10 @@
 [
   {
     "tenantName" : "default",
-    "schema" : "scrapify"
+    "schema" : "user"
   },
   {
     "tenantName" : "scrapify",
-    "schema" : "scrapify"
+    "schema" : "user"
   }
 ]
