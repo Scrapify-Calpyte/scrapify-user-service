@@ -2,7 +2,6 @@ package com.scrapify.scrapifyuser.controller;
 
 
 import com.scrapify.scrapifyuser.entity.User;
-import com.scrapify.scrapifyuser.repo.UserRepository;
 import com.scrapify.scrapifyuser.service.UserService;
 import com.scrapify.scrapifyuser.userexception.CustomException;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -9,4 +9,8 @@ public class UserMap {
     private Double latitude;
     private Double longitude;
     private Double distance;
+    private String productId;
+    private String stock;
+    private String price;
+    private String addressId;
 }

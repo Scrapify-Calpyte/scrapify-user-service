@@ -21,7 +21,7 @@ public class UserMapController {
 
     @GetMapping("/nearby-users")
     public List<UserMap> findNearbyUsers(@RequestParam("lat") double lat, @RequestParam("lng") double lng) {
-        String query = "SELECT u.id, u.first_name , au.latitude, au.longitude , \n" +
+        String query = "SELECT u.id, u.first_name , au.latitude, au.longitude , au.id as address_id \n" +
                 "(6371 * acos(cos(radians(?)) * cos(radians(latitude)) * cos(radians(longitude) - radians(?)) + sin(radians(?)) * sin(radians(latitude)))) AS distance\n" +
                 "from user_address au inner join users u on u.id = au.user_id;";
         List<UserMap> users = jdbcTemplate.query(query, new Object[]{lat, lng, lat}, new UserMapImpl());

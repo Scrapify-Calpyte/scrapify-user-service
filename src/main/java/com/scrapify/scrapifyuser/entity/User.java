@@ -11,21 +11,25 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "app_user")
+@Table(name = "users")
 @Where(clause = "is_deleted = false")
-public class User extends AuditableBase {
+public class User extends IdentifiableBase {
 
     private String id;
-    private String name;
     private String firstName;
     private String lastName;
-    private String mobileNumber;
+    private String mobile;
     private String email;
     private String userType;
 
     @Column(columnDefinition = "boolean default true")
     private Boolean isActive;
 
-    private String password;
+    @Column(columnDefinition = "boolean default false")
+    private Boolean isDeleted;
+
+    private String address;
+    private String gender;
+    private String profileImage;
 
 }

@@ -2,9 +2,9 @@ package com.scrapify.scrapifyuser.service.impl;
 
 
 import com.scrapify.scrapifyuser.dto.pagination.PaginationDTO;
+import com.scrapify.scrapifyuser.dto.pagination.SearchCriteria;
 import com.scrapify.scrapifyuser.dto.pagination.TableResponse;
 import com.scrapify.scrapifyuser.entity.User;
-import com.scrapify.scrapifyuser.dto.pagination.SearchCriteria;
 import com.scrapify.scrapifyuser.repo.UserRepository;
 import com.scrapify.scrapifyuser.service.UserService;
 import com.scrapify.scrapifyuser.specification.UserSpecification;
@@ -51,7 +51,7 @@ public class UserServiceImpl implements UserService {
         if (userOptional.isPresent()) {
             User user = new User();
             user.setId(userOptional.get().getId());
-            user.setName(userOptional.get().getName());
+            user.setFirstName(userOptional.get().getFirstName());
             return user;
         }
         return null;
@@ -68,7 +68,7 @@ public class UserServiceImpl implements UserService {
         Optional<User> userOpt = userRepository.findById(id);
         if (userOpt.isPresent()) {
             User user = userOpt.get();
-            user.setIsDeleted(true);
+            //user.setIsDeleted(true);
             userRepository.save(user);
         }
 
@@ -83,10 +83,10 @@ public class UserServiceImpl implements UserService {
 
         @Override
         public User findByUser(String user) {
-        User eUser = userRepository.findByName(user);
-        if(eUser != null){
-            return eUser;
-        }
+//        User eUser = userRepository.findByName(user);
+//        if(eUser != null){
+//            return eUser;
+//        }
         return null;
     }
 
