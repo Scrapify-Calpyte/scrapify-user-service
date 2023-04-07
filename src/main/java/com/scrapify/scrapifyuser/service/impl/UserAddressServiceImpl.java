@@ -33,6 +33,12 @@ public class UserAddressServiceImpl implements UserAddressService{
         return usersList.stream().map(user -> Mapper.map(user, UserAddress.class)).collect(Collectors.toList());
     }
 
+    @Override
+    public UserAddress findById(String id) {
+        Optional<UserAddress> userAddressOptional = userAddressRepository.findById(id);
+        return userAddressOptional.orElse(null);
+    }
+
 //    @Override
 //    public UserAddress findById(String id) {
 //        Optional<UserAddress> userOptional = userAddressRepository.findById(id);

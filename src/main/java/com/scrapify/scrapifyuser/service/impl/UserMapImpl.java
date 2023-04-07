@@ -16,6 +16,7 @@ public class UserMapImpl implements RowMapper<UserMap> {
         user.setLatitude(rs.getDouble("latitude"));
         user.setLongitude(rs.getDouble("longitude"));
         user.setDistance(rs.getDouble("distance"));
+        user.setAddressId(rs.getString("address_id"));
         return user;
     }
 }

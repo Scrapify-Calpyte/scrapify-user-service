@@ -1,7 +1,6 @@
 package com.scrapify.scrapifyuser.controller;
 
 
-import com.scrapify.scrapifyuser.entity.User;
 import com.scrapify.scrapifyuser.entity.UserAddress;
 import com.scrapify.scrapifyuser.service.UserAddressService;
 import com.scrapify.scrapifyuser.userexception.CustomException;
@@ -35,10 +34,10 @@ public class UserAddressController {
         return new ResponseEntity<>(userAddressService.getAllUserAddress(), HttpStatus.OK);
     }
 
-//    @RequestMapping(value = "/by-id", method = RequestMethod.GET)
-//    public ResponseEntity<UserAddress> findById(@RequestParam("id") String id) {
-//        return new ResponseEntity<>(userAddressService.findById(id), HttpStatus.OK);
-//    }
+    @RequestMapping(value = "/by-id", method = RequestMethod.GET)
+    public ResponseEntity<UserAddress> findById(@RequestParam("id") String id) {
+        return new ResponseEntity<>(userAddressService.findById(id), HttpStatus.OK);
+    }
 
     @GetMapping("/by-latitude")
     public ResponseEntity<UserAddress> findNearByUser(@RequestParam ("latitude") Double latitude ,@RequestParam("longitude") Double longitude){

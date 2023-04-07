@@ -11,7 +11,7 @@ public interface UserAddressService {
 
     List<UserAddress> getAllUserAddress();
 
-   // UserAddress findById(String id);
+    UserAddress findById(String id);
 
     UserAddress findNearByUser(Double latitude, Double longitude);
 
